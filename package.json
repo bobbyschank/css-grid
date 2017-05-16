@@ -1,0 +1,24 @@
+{
+  "name": "css-grid",
+  "version": "1.0.0",
+  "description": "CSS Grid",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://nickandersonr:8d0402fd57e74fb1b97e5456435cb8b45ec315ba@github.com/den-materials/css-grid.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/den-materials/css-grid/issues"
+  },
+  "homepage": "https://github.com/den-materials/css-grid#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  }
+}
