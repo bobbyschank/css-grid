@@ -1,3 +1,97 @@
-* {
-	background: #FFCC00;
+/* ---------------------------------------------- /*
+ * Main SCSS
+/* ---------------------------------------------- */
+
+/*----- Variables & Mixins -----*/
+
+$color-darkblue: #002A4A;
+$color-lightblue: #17607D;
+$color-tan: #FFF1CE;
+$color-orange: #FF9311;
+$color-red: #D64700;
+$color-white: #FFF;
+
+@mixin bg-darkblue($tint) {
+  background: rgba(0, 42, 74, $tint);
+}
+@mixin bg-lightblue($tint) {
+  background: rgba(23, 96, 125, $tint);
+}
+@mixin bg-tan($tint) {
+  background: rgba(255, 241, 206, $tint);
+}
+@mixin bg-orange($tint) {
+  background: rgba(255, 147, 17, $tint);
+}
+@mixin bg-red($tint) {
+  background: rgba(214, 71, 0, $tint);
+}
+
+$font-barrio: 'Barrio';
+
+
+/*----- Global -----*/
+
+body {
+	background: $color-white;
+	text-align: center;
+}
+
+h1 {
+	font-size: 3em;
+	color: $color-white;
+}
+
+/*----- Grid Color -----*/
+
+.header {
+	@include bg-darkblue(1);
+	&.outer {
+    	@include bg-darkblue(.5);
+    }
+    &.secondary {
+    	@include bg-darkblue(.75);
+    }
+}
+.mid {
+	@include bg-lightblue(1);
+	&.outer {
+    	@include bg-lightblue(.5);
+    }
+    &.secondary {
+    	@include bg-lightblue(.75);
+    }
+}
+.footer {
+	@include bg-orange(1);
+	&.outer {
+    	@include bg-orange(.5);
+    }
+    &.secondary {
+    	@include bg-orange(.75);
+    }
+}
+
+/*----- Structure -----*/
+
+body {
+	font-family: $font-barrio;
+}
+.grid {
+	display: grid;
+	grid-template-columns:  [first] 5vw 
+							[line2] 15vw 
+							[line3] auto 
+							[col4-start] 15vw 
+							[five] 5vw 
+							[end];
+
+    grid-template-rows: 	[row1-start] 20vh
+    						[row1-end] 70vh
+    						[third-line] 10vh
+    						[last-line];
+}
+.item {
+	color: $color-tan;
+	border: 1px solid $color-white;
 }

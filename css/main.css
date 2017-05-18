@@ -1,2 +1,47 @@
-* {
-  background: #FFCC00; }
+/* ---------------------------------------------- /*
+ * Main SCSS
+/* ---------------------------------------------- */
+/*----- Variables & Mixins -----*/
+/*----- Global -----*/
+body {
+  background: #FFF;
+  text-align: center; }
+
+h1 {
+  font-size: 3em;
+  color: #FFF; }
+
+/*----- Grid Color -----*/
+.header {
+  background: #002a4a; }
+  .header.outer {
+    background: rgba(0, 42, 74, 0.5); }
+  .header.secondary {
+    background: rgba(0, 42, 74, 0.75); }
+
+.mid {
+  background: #17607d; }
+  .mid.outer {
+    background: rgba(23, 96, 125, 0.5); }
+  .mid.secondary {
+    background: rgba(23, 96, 125, 0.75); }
+
+.footer {
+  background: #ff9311; }
+  .footer.outer {
+    background: rgba(255, 147, 17, 0.5); }
+  .footer.secondary {
+    background: rgba(255, 147, 17, 0.75); }
+
+/*----- Structure -----*/
+body {
+  font-family: "Barrio"; }
+
+.grid {
+  display: grid;
+  grid-template-columns: [first] 5vw [line2] 15vw [line3] auto [col4-start] 15vw [five] 5vw [end];
+  grid-template-rows: [row1-start] 20vh [row1-end] 70vh [third-line] 10vh [last-line]; }
+
+.item {
+  color: #FFF1CE;
+  border: 1px solid #FFF; }
