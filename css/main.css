@@ -13,35 +13,57 @@ h1 {
 
 /*----- Grid Color -----*/
 .header {
-  background: #002a4a; }
+  background: #17607d; }
   .header.outer {
-    background: rgba(0, 42, 74, 0.5); }
+    background: rgba(23, 96, 125, 0.5); }
   .header.secondary {
-    background: rgba(0, 42, 74, 0.75); }
+    background: rgba(23, 96, 125, 0.65); }
 
 .mid {
-  background: #17607d; }
+  background: white; }
   .mid.outer {
-    background: rgba(23, 96, 125, 0.5); }
+    background: rgba(23, 96, 125, 0.15); }
   .mid.secondary {
-    background: rgba(23, 96, 125, 0.75); }
+    background: rgba(23, 96, 125, 0.25); }
 
 .footer {
-  background: #ff9311; }
+  background: #002a4a; }
   .footer.outer {
-    background: rgba(255, 147, 17, 0.5); }
+    background: rgba(0, 42, 74, 0.5); }
   .footer.secondary {
-    background: rgba(255, 147, 17, 0.75); }
+    background: rgba(0, 42, 74, 0.65); }
+
+/*----- Typography -----*/
+body {
+  font-family: Arial; }
+
+h1, h2, h3, h4, h5 {
+  font-family: "Lobster"; }
 
 /*----- Structure -----*/
-body {
-  font-family: "Barrio"; }
-
 .grid {
   display: grid;
-  grid-template-columns: [first] 5vw [line2] 15vw [line3] auto [col4-start] 15vw [five] 5vw [end];
-  grid-template-rows: [row1-start] 20vh [row1-end] 70vh [third-line] 10vh [last-line]; }
+  grid-template-columns: [edge_left] 14vw [gutter_left] 2vw [middle] auto [gutter_right] 2vw [edge_right] 14vw;
+  grid-template-rows: [row-1] 14vh [row-2] auto [row-3] 4vh;
+  grid-template-areas: "header header header header header" "main main main main main" "footer footer footer footer footer";
+  grid-gap: 1vw 1vh; }
 
 .item {
-  color: #FFF1CE;
-  border: 1px solid #FFF; }
+  color: #FFF; }
+
+.products {
+  display: grid;
+  grid-template-columns: [left] 1fr [middle] 1fr [right] 1fr;
+  grid-template-rows: [row-1] 1fr [row-2] 1fr [row-3] 1fr;
+  align-items: center;
+  grid-gap: 1em 1em;
+  padding: 1em; }
+  .products div {
+    background: #FFF;
+    color: #002A4A; }
+    .products div img {
+      max-width: 100%; }
+
+.placeholder-img {
+  background: #FF9311;
+  border-radius: 6px; }

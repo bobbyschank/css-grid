@@ -26,8 +26,11 @@ $color-white: #FFF;
 @mixin bg-red($tint) {
   background: rgba(214, 71, 0, $tint);
 }
+@mixin bg-white($tint) {
+  background: rgba(255, 255, 255, $tint);
+}
 
-$font-barrio: 'Barrio';
+$font-lobster: 'Lobster';
 
 
 /*----- Global -----*/
@@ -45,53 +48,95 @@ h1 {
 /*----- Grid Color -----*/
 
 .header {
-	@include bg-darkblue(1);
-	&.outer {
-    	@include bg-darkblue(.5);
-    }
-    &.secondary {
-    	@include bg-darkblue(.75);
-    }
-}
-.mid {
 	@include bg-lightblue(1);
 	&.outer {
     	@include bg-lightblue(.5);
     }
     &.secondary {
-    	@include bg-lightblue(.75);
+    	@include bg-lightblue(.65);
+    }
+}
+.mid {
+	@include bg-white(1);
+	&.outer {
+    	@include bg-lightblue(.15);
+    }
+    &.secondary {
+    	@include bg-lightblue(.25);
     }
 }
 .footer {
-	@include bg-orange(1);
+	@include bg-darkblue(1);
 	&.outer {
-    	@include bg-orange(.5);
+    	@include bg-darkblue(.5);
     }
     &.secondary {
-    	@include bg-orange(.75);
+    	@include bg-darkblue(.65);
     }
+}
+
+/*----- Typography -----*/
+
+body {
+	font-family: Arial;
+}
+h1,h2,h3,h4,h5 {
+	font-family: $font-lobster;
 }
 
 /*----- Structure -----*/
 
-body {
-	font-family: $font-barrio;
-}
+
 .grid {
 	display: grid;
-	grid-template-columns:  [first] 5vw 
-							[line2] 15vw 
-							[line3] auto 
-							[col4-start] 15vw 
-							[five] 5vw 
-							[end];
+	grid-template-columns:  [edge_left] 14vw 
+							[gutter_left] 2vw 
+							[middle] auto 
+							[gutter_right] 2vw 
+							[edge_right] 14vw;
 
-    grid-template-rows: 	[row1-start] 20vh
-    						[row1-end] 70vh
-    						[third-line] 10vh
-    						[last-line];
+    grid-template-rows: 	[row-1] 14vh
+    						[row-2] auto
+    						[row-3] 4vh;
+	grid-template-areas: 	"header header header header header"
+                       		"main main main main main"
+                       		"footer footer footer footer footer";
+    grid-gap: 1vw 1vh;
 }
 .item {
-	color: $color-tan;
-	border: 1px solid $color-white;
+	color: $color-white;
+}
+
+// .sub-grid {
+// 	display: grid;
+//   	grid-template-columns: 1fr;
+//   	grid-template-rows: 	[row-1] 1fr
+//     						[row-2] 1fr;
+//    	align-items: center;
+// }
+
+.products {
+	display: grid;
+	grid-template-columns:  [left] 1fr
+							[middle] 1fr 
+							[right] 1fr;
+
+    grid-template-rows: 	[row-1] 1fr
+    						[row-2] 1fr
+    						[row-3] 1fr;
+    align-items: center;
+    grid-gap: 1em 1em;
+    padding: 1em;
+   	div {
+   		background: $color-white;
+   		color: $color-darkblue;
+   		img {
+   			max-width: 100%;
+   		}
+   	}
+}
+
+.placeholder-img {
+	background: $color-orange;
+	border-radius: 6px;
 }

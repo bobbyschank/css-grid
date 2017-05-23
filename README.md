@@ -1,5 +1,6 @@
 # css-grid
-CSS Grid
+
+
 
 http://chris.house/blog/a-complete-guide-css-grid-layout/  
   
@@ -8,5 +9,7 @@ http://chris.house/blog/a-complete-guide-css-grid-layout/
 3. 
   
   
+Random wheel - have the devs randomly redesign a website using grid from an RNG
+
 Examples:  
 http://zurb.com/playground/css-grid-examples
