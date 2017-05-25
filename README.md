@@ -149,14 +149,42 @@ So - what did we change here, and why?
     }
 ```
 
+#### .grid:
 
+1. `grid-template-columns` - We've reduced our left and right gutters to 0%, effectively removing them.
+2. `grid-template-rows` - We've switched to explicit heights, as it no longer makes sense to base our header and footer content based of of total content size.
 
-## Examples
+#### .products:
+
+1. `grid-template-columns` - We now only have two columns - that's all we need on a screen this size.
+2. `grid-template-rows` - However we're gonna need some more rows now - we've gone up to 4.
+
+### Max-Width: 419px (Small Phones)
+
+```css
+    @media (max-width: 419px) {
+        .products {
+            grid-template-columns:  [center] 1fr;
+        }
+    }
+```
+
+1. `grid-template-columns` - Just one column of products now - it's all that fits!
+
+Refresh your browser - tada! A fully responsive grid layout! Not bad!
+But not good either.
+
+## Pushing it further
+
+[Jen Simmons](http://jensimmons.com/) has been instrumental in pushing the boundaries of what CSS Grid can do. Included in this repo are a few examples of her experiments.
+
+## More Examples
 
 - [Chris House's Complete Guide to CSS Grid](http://chris.house/blog/a-complete-guide-css-grid-layout/)
 - [Zurb's CSS Grid Examples](http://zurb.com/playground/css-grid-examples)
 - [Jen Simmon's Guide to learning CSS Grid](http://jensimmons.com/post/feb-27-2017/learn-css-grid)
 - [Jen Simmon's Labs](http://labs.jensimmons.com/)
+- [Webkit CSS Grid Demos](https://webkit.org/demos/css-grid/)
 
 ## Sources
 
