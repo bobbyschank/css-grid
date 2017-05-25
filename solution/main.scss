@@ -112,17 +112,17 @@ h1,h2,h3,h4,h5, .price {
 
 .grid {
 	display: grid;
-	grid-template-columns:  [left] 16vw 
+	grid-template-columns:  [edge_left] 16vw 
 							[middle] auto 
-							[right] 16vw;
+							[edge_right] 16vw;
 
     grid-template-rows: 	[row-1] 14vh
     						[row-2] auto
     						[row-3] 4vh;
 	grid-template-areas: 	"header header header"
-                       		"main-left main main-right"
+                       		"main main main"
                        		"footer footer footer";
-    grid-gap: 1em 1em;
+    grid-gap: 1vw 1vh;
     .item {
 		color: $color-white;
 	}
@@ -150,12 +150,21 @@ h1,h2,h3,h4,h5, .price {
 
 @media (max-width: 1024px) {
 	.grid {		
-		grid-template-columns:  [left] 10% 
+		grid-template-columns:  [edge_left] 10% 
 								[middle] auto 
-								[right] 10%;
+								[edge_right] 10%;
 
 	    grid-template-rows: 	[row-1] 1fr
 	    						[row-2] 5fr
+	    						[row-3] 1fr;
+	}
+	.products {
+		grid-template-columns:  [left] 1fr
+								[middle] 1fr 
+								[right] 1fr;
+
+	    grid-template-rows: 	[row-1] 1fr
+	    						[row-2] 1fr
 	    						[row-3] 1fr;
 	}
 	h1 {
@@ -164,9 +173,9 @@ h1,h2,h3,h4,h5, .price {
 }
 @media (max-width: 768px) {
 	.grid {		
-		grid-template-columns:  [left] 0% 
+		grid-template-columns:  [edge_left] 0% 
 								[middle] auto 
-								[right] 0%;
+								[edge_right] 0%;
 
 	    grid-template-rows: 	[row-1] 140px
 	    						[row-2] auto
